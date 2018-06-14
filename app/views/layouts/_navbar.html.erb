@@ -1,0 +1,41 @@
+<div class="container-fluid top-of-page">
+  <nav class="navbar container navbar-expand-md navbar-light" id="custom-nav">
+    <%= link_to 'Hans Martin Hanken', root_path, class: 'navbar-brand' %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#prosjekt"><%= t('nav.item_1') %></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#tjenester"><%= t('nav.item_2') %></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#kontakt"><%= t('nav.item_3') %></a>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "#{t('nav.item_4')}", posts_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= image_tag "#{I18n.locale}.svg", class: 'flag' %></a>
+          <div class="dropdown-menu">
+            <%= link_to "#{I18n.locale}", class: "dropdown-item" do %>
+              <%= image_tag("#{I18n.locale}.svg", class: 'flag') %> <%= I18n.locale.upcase %>
+            <% end %>
+            <div class="dropdown-divider"></div>
+            <% I18n.available_locales.each do |locale| %>
+              <% unless locale == I18n.locale %>
+                <%= link_to locale: "#{locale}" do %>
+                  <span class="dropdown-item"><%= image_tag("#{locale}.svg", class: 'flag') %> <%= locale.upcase %></span>
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

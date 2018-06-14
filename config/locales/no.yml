@@ -1,0 +1,73 @@
+'no':
+  nav:
+    item_1: 'Prosjekt'
+    item_2: 'Ferdigheter'
+    item_3: 'Kontakt'
+    item_4: 'Blogg'
+
+  main:
+    heading: 'Webutvikler og nettside bygger'
+    text: 'Full-stack Ruby on Rails webutvikler og JavaScript entusiast.'
+    btn: 'Se prosjekter'
+
+  muli:
+    title: "Muli Clothing"
+    short_description: "Wordpress og nettbutikk"
+    description: "Tilpasning av wordpress theme og integrering av Woocommerce nettbutikk"
+    btn_text: "Se nettside"
+
+  byes:
+    title: "Byes begravelsesbyrå"
+    short_description: "Wordpress nettside"
+    description: "Tilpasning av wordpress theme og design av logo"
+    btn_text: "Se nettside"
+
+  about:
+    title: "Litt om meg"
+    text: "Født og oppvokst i Ålesund, på vestkysten av Norge. Jeg har alltid hatt en lidenskap for å skape noe stort. Gjennom webutvikling har jeg funnet et verktøy til å utrette nettopp det."
+
+  services:
+    title: 'Hva jeg gjør'
+    col_1:
+      title: 'Ruby on Rails'
+      text: "Jeg er en full-stack Ruby on Rails web utvikler. Jeg elsker Rails fordi det er et intuitivt rammeverk som hjelper meg å fokusere på det aller viktigste, nemlig å løse problemer og bygge apper!"
+    col_2:
+      title: 'JavaScript'
+      text: "JS er et fantastisk verktøy for moderne front-end design. Jeg bruker JS på stort sett alle mine prosjekter. Jeg planlegger å lære React.js for mine fremtidig prosjekt."
+    col_3:
+      title: 'Agile'
+      text: 'Gjennom Firehose bootcamp ble jeg introdusert for et konsept kalt \"agile team utvikling\". Jeg er overbevist om at appene du lager aldri blir bedre enn teamet bak dem.'
+
+  contact:
+    title: 'Kontakt'
+    text: 'Jeg hadde elsket å hørt fra deg om dine web utviklings behov! Send meg en melding, så vil jeg svare deg så raskt jeg kan.'
+    btn: 'Send melding'
+
+  contact_form:
+    title: 'Send en melding'
+    name: 'Navn'
+    email: 'E-post'
+    phone: 'Telefon'
+    website: 'Webside'
+    message: 'Melding'
+    label:
+      name: 'Ditt navn'
+      email: 'Din e-post adresse'
+      phone: 'Ditt telefon nr'
+      website: 'Din webside'
+      message: 'Skriv meldingen din her'
+
+  time:
+  formats:
+    default: "%a %b %d %H:%M:%S %Z %Y"
+    time: "%H:%M"
+    short: "%d %b %H:%M"
+    long: "%B %d, %Y %H:%M"
+    only_second: "%S"
+
+    datetime:
+      formats:
+        default: "%Y-%m-%dT%H:%M:%S%Z"
+
+    am: 'am'
+    pm: 'pm'

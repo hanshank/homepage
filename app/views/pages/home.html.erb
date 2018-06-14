@@ -1,0 +1,113 @@
+<div class="container-fluid main-banner full-height parallax">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2 text-center">
+        <div class="background">
+          <div class="content">
+            <div class="">
+              <h1 class="header-title uppercase" id="hid"><%= t('main.heading') %></h1>
+            </div>
+            <div class="sub-content">
+              <p><%= t('main.text') %></p>
+              <button class="button uppercase main-btn"><a href="#prosjekt"><%= t('main.btn') %></a><i class="empty"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container section project d-flex align-items-center" id="prosjekt">
+  <div class="container section-inner">
+    <div class="row">
+      <div class="col-sm-12 order-2 col-md-6 order-md-1 col-lg-6 d-flex align-items-center">
+        <div class="text-center-sm">
+          <h3><%= t 'muli.title' %></h3>
+            <p class="sub-title"><%= t 'muli.short_description' %></p>
+          <p><%= t 'muli.description' %></p>
+          <button class="button"><a href="https://muliclothing.com"><%= t 'muli.btn_text' %></a></button>
+        </div>
+      </div>
+      <div class="col-sm-12 order-1 col-md-6 order-md-2 col-lg-6 d-flex align-items-center">
+        <%= image_tag 'muli-laptop.png', class: 'img-fluid' %>
+      </div>
+    </div> <!-- ROW 1 -->
+    <div class="row d-flex align-items-center row2">
+      <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-center">
+        <%= image_tag 'byes-laptop.png', class: 'img-fluid' %>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 d-flex align-items-center">
+        <div class="text-center-sm">
+          <h3><%= t 'byes.title' %></h3>
+            <p class="sub-title"><%= t 'byes.short_description' %></p>
+          <p><%= t 'byes.description' %></p>
+          <button class="button"><a href="https://www.byes.no"><%= t 'byes.btn_text' %></a></button>
+        </div>
+      </div>
+    </div> <!-- ROW 2 -->
+  </div>
+</div>
+
+
+
+<!-- <div class="container full-height section banner" id="services">
+  <h1 class="text-center">Services</h1> -->
+<div class="about d-flex align-items-center" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-8 offset-md-2 text-center d-flex align-items-center">
+        <div class="">
+          <h3><%= t('about.title') %></h3>
+          <p><%= t('about.text') %></p>
+          <%= image_tag 'dude.jpg', class: 'circle' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services d-flex align-items-center parallax" id="tjenester">
+  <div class="container">
+    <h1 class="text-center service-title"><%= t('services.title') %></h1>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="card card1">
+          <p class="text-center"><i class="fab fa-wordpress fa-7x" style="color:black;"></i></p>
+          <h4 class="text-center"><%= t('services.col_1.title') %></h4>
+          <p class="text-center"><%= t('services.col_1.text') %></p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+          <p class="text-center"><i class="fab fa-js fa-7x" style="color:black;"></i></p>
+          <h4 class="text-center"><%= t('services.col_2.title') %></h4>
+          <p class="text-center"><%= t('services.col_2.text') %></p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+          <p class="text-center"><i class="fas fa-credit-card fa-7x" style="color:black;"></i></p>
+          <h4 class="text-center"><%= t('services.col_3.title') %></h4>
+          <p class="text-center"><%= t('services.col_3.text') %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contact d-flex align-items-center" id="kontakt">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-6 offset-lg-3 text-center">
+        <h1><%= t('contact.title') %></h1>
+        <p><%= t('contact.text') %></p>
+        <button class="button" data-toggle="modal" data-target="#myModal"><a><%= t('contact.btn') %></a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'layouts/contact_modal' %>

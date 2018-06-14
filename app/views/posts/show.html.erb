@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <h3><%= simple_format(@post.title) %></h3>
+        <%= image_tag(@post.image.to_s, class: 'img-fluid') %>
+      <p><%= raw @post.content %></p>
+    </div>
+    <div class="col-12 col-md-4">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,89 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  nav:
+    item_1: 'Projects'
+    item_2: 'Skills'
+    item_3: 'Contact'
+    item_4: 'Blog'
+
+  main:
+    heading: 'Web developer and website creator'
+    text: 'Full-stack Ruby on Rails web developer and JavaScript enthusiast.'
+    btn: 'See projects'
+
+  muli:
+    title: "Muli Clothing"
+    short_description: "Wordpress and webshop"
+    description: "Customization of WordPress theme and Woocommerce webshop integration"
+    btn_text: "View page"
+
+  byes:
+    title: "Byes Funeral Home"
+    short_description: "Wordpress website"
+    description: "Customization of WordPress theme and logo design"
+    btn_text: "View page"
+
+  about:
+    title: "About me"
+    text: "Born and raised on the beautiful coast of Norway. I was lucky enough to experience the great gift of web development. This has become my huge passion! There are few things I would rather be doing than creating kick-ass web solutions, all day long!"
+
+  services:
+    title: 'What I do'
+    col_1:
+      title: 'Ruby on Rails'
+      text: "I am a full-stack Ruby on Rails developer. I love Rails because it's intuitive and makes me focus on the most important thing, solving problems and building apps!"
+    col_2:
+      title: 'JavaScript'
+      text: "JS is a great tool for modern front-end design. It is my go-to tool for creating the ultimate user experience. I am planning to learn React.js for my future projects."
+    col_3:
+      title: 'Agile'
+      text: 'Through Firehose bootcamp, I was introduced to the concept of agile team development. I believe your apps are only as good as the team that is making it.'
+
+  contact:
+    title: 'Get in touch'
+    text: "I would love to hear from you about your web developer needs! Send me a message and I'll be quick to get back to you."
+    btn: "Send message"
+
+  contact_form:
+    title: 'Send me a message'
+    name: 'Name'
+    email: 'Email'
+    phone: 'Phone'
+    website: 'Website'
+    message: 'Message'
+    label:
+      name: 'Your name'
+      email: 'Your email address'
+      phone: 'Your phone number'
+      website: 'Your website'
+      message: 'Write your message here'
