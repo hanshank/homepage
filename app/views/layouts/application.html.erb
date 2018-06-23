@@ -29,12 +29,12 @@
 
   <body>
 
-    <% if current_page?(root_path) %>
-      <%= render 'layouts/transparent_navbar' %>
-    <% else %>
+    <% unless current_page?(controller: 'pages', action: 'home') %>
       <%= render 'layouts/navbar' %>
+    <% else %>
+      <%= render 'layouts/transparent_navbar' %>
     <% end %>
-    
+
     <%= yield %>
 
     <%= render 'layouts/footer' %>

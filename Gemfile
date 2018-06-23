@@ -65,4 +65,4 @@ gem 'bootstrap'
 
 gem 'carrierwave', '~> 1.0'
 
-gem "wysiwyg-rails"
+gem 'trix'

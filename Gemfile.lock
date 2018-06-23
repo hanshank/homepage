@@ -86,8 +86,6 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
-    font-awesome-sass (5.0.13)
-      sassc (>= 1.11)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.0.1)
@@ -168,10 +166,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (1.11.4)
-      bundler
-      ffi (~> 1.9.6)
-      sass (>= 3.3.0)
     selenium-webdriver (3.12.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
@@ -190,6 +184,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    trix (0.10.1)
+      rails
     turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
@@ -205,9 +201,6 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
-    wysiwyg-rails (2.8.1)
-      font-awesome-sass (>= 4.4.0)
-      railties (>= 3.2, < 6.0)
     xpath (3.1.0)
       nokogiri (~> 1.8)
 
@@ -231,11 +224,11 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  trix
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
-  wysiwyg-rails
 
 RUBY VERSION
    ruby 2.5.1p57
