@@ -1,0 +1,10 @@
+<% Post.all.limit(4).each do |post| %>
+  <div class="">
+    <% if post.published? %>
+      <%= link_to post_path(post), class: "remove-link-style" do %>
+        <%= image_tag post.image.to_s, class: 'img-fluid' %>
+        <p><%= post.title %></p>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

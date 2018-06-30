@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hans Martin Hanken | Nettsider, blogg og webutvikling</title>
+    <meta name="description" content="Trenger du ny nettside, blogg eller en webutvikler for dine prosjekt? Jeg tar meg av jobben, slik at du kan fokusere på det du er best til! Spar penger og få jobben gjort i dag.">
+    <meta name="keywords" content="Nettside, webutvikler, webutvikling, blogg, Ålesund, wordpress">
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag params[:controller] %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  </head>
+
+<header>
+  <% if notice %>
+    <div class="alert alert-success dismissible">
+      <a href="#" class="close" data-dismiss="alert" onclick="remove();" aria-label="close">&times;</a>
+      <p class=""><%= notice %></p>
+    </div>
+  <% end %>
+  <% if alert %>
+    <div class="flash">
+      <p class="alert alert-danger"><%= alert %></p>
+    </div>
+  <% end %>
+</header>
+
+
+
+  <body>
+
+    <%= render 'layouts/navbar' %>
+
+
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
+
+  </body>
+
+</html>

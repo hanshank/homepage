@@ -1,11 +1,23 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8">
-      <h3><%= simple_format(@post.title) %></h3>
+<div class="container-fluid post-body">
+  <div class="container">
+    <br><br>
+    <div class="grid post-grid">
+      <div class="post">
         <%= image_tag(@post.image.to_s, class: 'img-fluid') %>
-      <p><%= raw @post.content %></p>
+      </div>
+      <div class="empty grid"></div>
+      <div class="">
+        <h3><%= simple_format(@post.title) %></h3>
+        <p><%= raw @post.content %></p>
+      </div>
     </div>
-    <div class="col-12 col-md-4">
+
+    <div class="">
+      <h4>More from the blog</h4>
+      <div class="recent-posts-grid">
+        <%= render 'recent_posts' %>
+      </div>
     </div>
+
   </div>
 </div>

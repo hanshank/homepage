@@ -2,6 +2,11 @@ class PagesController < ApplicationController
 
   def home
     @contact = Contact.new
+
+    respond_to do |format|
+      format.html { render layout: 'homepage'}
+    end
+
   end
 
   def contact
@@ -20,6 +25,9 @@ class PagesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html { render layout: 'homepage'}
+    end
   end
 
 private

@@ -10,15 +10,24 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_to do |format|
+      format.html { render :layout => 'post' }
+    end
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    respond_to do |format|
+      format.html { render :layout => 'post' }
+    end
   end
 
   # GET /posts/1/edit
   def edit
+    respond_to do |format|
+      format.html { render :layout => 'post' }
+    end
   end
 
   # POST /posts

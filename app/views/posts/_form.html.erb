@@ -28,12 +28,14 @@
 
     <div class="actions">
       <br>
-      <%= form.submit %>
+      <%= form.label :publish_post %>
+      <%= form.check_box :published %>
     </div>
 
     <div class="actions">
       <br>
-      <%= form.label :publish_post %>
-      <%= form.check_box :published %>
+      <%= form.submit %>
     </div>
+
+
   <% end %>

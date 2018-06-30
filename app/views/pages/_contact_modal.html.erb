@@ -1,0 +1,47 @@
+<!-- Modal -->
+<div class="modal fade main-modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t('contact_form.title') %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_for @contact, :url => contact_pages_path do |f| %>
+       <div class="modal-body">
+         <div class="form-row">
+           <div class="form-group col-md-6 required">
+             <label for="inputName"><%= t('contact_form.name') %></label>
+             <%= f.text_field :name, class: 'form-control', placeholder: "#{t('contact_form.label.name')}", required: true  %>
+           </div>
+           <div class="form-group col-md-6 required">
+             <label for="inputEmail"><%= t('contact_form.email') %></label>
+             <%= f.text_field :email, class: 'form-control', placeholder: "#{t('contact_form.label.email')}", required: true  %>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group col-md-6">
+             <label for="inputEmail4"><%= t('contact_form.phone') %></label>
+             <%= f.text_field :phone_number, class: 'form-control', placeholder: "#{t('contact_form.label.phone')}"%>
+           </div>
+           <div class="form-group col-md-6">
+             <label for="inputPassword4"><%= t('contact_form.website') %></label>
+             <%= f.text_field :website, class: 'form-control', placeholder: "#{t('contact_form.label.website')}" %>
+           </div>
+         </div>
+         <div class="form-row">
+           <div class="form-group col-sm-12 required">
+              <label for="body"><%= t('contact_form.message') %></label>
+              <%= f.text_area :body, placeholder: "#{t('contact_form.label.message')}", class: 'form-control', required: true  %>
+           </div>
+         </div>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <%= f.submit 'Send', class: 'btn btn-primary' %>
+       </div>
+      <% end %>
+    </div>
+  </div>
+</div>

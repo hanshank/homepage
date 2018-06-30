@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
+  validates_presence_of :image
 
   def post_published?
     if self.published == true
@@ -15,8 +16,18 @@ class Post < ApplicationRecord
     end
   end
 
-  def self.newest_post
+  def self.get_newest_post
     self.where({ published: true }).where.not(image: nil).order("published_at desc").limit(1)
+    self
+  end
+
+  def self.newest_post(param)
+    @newest_post = (self.where({ published: true }).where.not(image: nil).order("published_at desc").limit(1)).pluck(param).join
+    self
+  end
+
+  def self.newest_post2(param)
+    @newest_post = (self.where({ published: true }).where.not(image: nil).order("published_at desc").limit(1)).pluck(param).join
   end
 
   def self.published
@@ -27,6 +38,16 @@ class Post < ApplicationRecord
       end
     end
     return published
+  end
+
+  def self.excerpt
+    variable = @newest_post.truncate(340, separator: /\W/).remove("<div>")
+    variable.nil? ? nil : variable.chomp(',.:();-')
+    variable
+  end
+
+  def self.summary
+    self.upcase
   end
 
   def self.image
