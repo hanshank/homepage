@@ -5,6 +5,26 @@
   background-color: white;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.js-link {
+    cursor: pointer;
+}
+
+.alert {
+  margin-bottom: 0;
+}
+
+header {
+  position: relative;
+}
+
 .overlay {
   box-shadow: inset 0 0 0 2000px rgba(255,0,150,0.3);
   transition: .3s;
@@ -47,11 +67,6 @@ div.required label:after {
 
 .navbar-brand {
   font-size: 1.3rem;
-}
-
-header {
-  position: absolute;
-  z-index: 10
 }
 
 .header-title {

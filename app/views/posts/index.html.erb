@@ -2,10 +2,10 @@
   <div class="container-fluid blog-banner d-flex align-items-center parallax" id="blog-banner" style="background-image: url(<%= "/uploads/post/image/#{@posts.newest_post2(:id)}/#{@posts.newest_post2(:image)}" %>);">
     <div class="container">
       <div class="title-box">
-        <p><%= @posts.newest_post2(:published_at) %></p>
         <%= link_to @posts.find_by_id("#{@posts.newest_post2(:id)}"), class: 'remove-link-style' do %>
         <h2 class="text-left black" id="post"><%= @posts.newest_post2(:title).upcase %></h2>
         <% end %>
+        <%= link_to 'Read now', @posts.find_by_id("#{@posts.newest_post2(:id)}"), class: 'btn btn-primary'  %>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
           <% if post.published? %>
             <%= link_to post_path(post), class: "remove-link-style" do %>
               <%= image_tag post.image.to_s, class: 'img-fluid' %>
-              <p class="clear" id="raiko"><%= post.title%></p>
+              <h5 class="clear" id="raiko"><%= post.title%></h5>
             <% end %>
             <%= raw post.content.truncate(200, seperator: /\W/) %>
           <% end %>

@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 //
 
+.tab-header {
+  padding: 10% 0;
+}
+
+.project-tab {
+  display: inline;
+  padding: 5% 20%;
+}
+
 .typewriter h1 {
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   // border-right: .05em solid black; /* The typwriter cursor */

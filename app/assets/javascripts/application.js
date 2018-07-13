@@ -21,17 +21,17 @@
 
 
 
-window.onload=function(){
-
-  post = document.getElementById("post");
-  background = document.querySelector(".blog-banner");
-
-  post.addEventListener("mouseenter", function(){
-      background.classList.add("overlay");
-  });
-
-  post.addEventListener("mouseout", function(){
-      background.classList.remove("overlay");
-  });
-
-}
+// window.onload=function(){
+//
+//   post = document.getElementById("post");
+//   background = document.querySelector(".blog-banner");
+//
+//   post.addEventListener("mouseenter", function(){
+//       background.classList.add("overlay");
+//   });
+//
+//   post.addEventListener("mouseout", function(){
+//       background.classList.remove("overlay");
+//   });
+//
+// }
