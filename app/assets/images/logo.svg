@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="249px" height="218px" viewBox="0 0 249 218" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logo-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-2" transform="translate(-670.000000, -448.000000)">
+            <g id="Group" transform="translate(670.000000, 448.000000)">
+                <path d="M143.736162,178.769823 C212.495614,178.769823 249,199.832498 249,120.045619 C249,40.2587388 193.259451,0 124.5,0 C55.7405486,0 0,40.2587388 0,120.045619 C0,152.723855 9.35029876,182.867967 25.1157527,207.072084 C47.8430857,241.964516 103.138454,178.769823 143.736162,178.769823 Z" id="Oval" fill="#000000"></path>
+                <text id="MONK" font-family="Montserrat-Regular, Montserrat" font-size="50" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="42.05" y="122">MONK</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

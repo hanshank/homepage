@@ -24,6 +24,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def homepage
+    @projects = Project.all
+  end
+
   def show
     respond_to do |format|
       format.html { render layout: 'homepage'}

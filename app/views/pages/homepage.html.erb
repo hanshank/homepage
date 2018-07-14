@@ -1,0 +1,88 @@
+<div class="welcome-container f-height">
+  <div class="welcome-box">
+      <h1>Something is coming here</h1>
+  </div>
+</div>
+
+<div class="container-fluid f-height">
+  <div class="container projects-container d-grid f-height">
+    <div class="projects-title d-grid justify-self-center align-self-center">
+      <h1>Monk projects</h1>
+    </div>
+
+    <div class="projects-nav d-grid align-items-center justify-items-center">
+      <div class="">
+        <span class="js-link" id="websites-link">Websites</span>
+      </div>
+      <div class="">
+        <span class="js-link" id="code-link">Code</span>
+      </div>
+      <div class="">
+        <span class="js-link" id="school-link">School</span>
+      </div>
+      <div class="">
+        <span class="js-link" id="fun-link">Fun</span>
+      </div>
+    </div>
+
+
+    <div class="d-grid justify-items-center">
+      <% @projects.each do |project| %>
+        <% if project.category.name == "Websites" %>
+        <div class="projects-boxes d-grid" id="websites-container">
+          <div class="bg-yellow">
+            <span><%= project.name %></span>
+            <span><%= project.category.name %></span>
+            <%= image_tag project.image.to_s, class: 'img-fluid' %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      <% @projects.each do |project| %>
+        <% if project.category.name == "Code" %>
+        <div class="projects-boxes d-grid hide" id="code-container">
+          <div class="bg-yellow">
+            <span><%= project.name %></span>
+            <span><%= project.category.name %></span>
+            <%= image_tag project.image.to_s, class: 'img-fluid' %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      <% @projects.each do |project| %>
+        <% if project.category.name == "School" %>
+        <div class="projects-boxes d-grid hide" id="school-container">
+          <div class="bg-yellow">
+            <span><%= project.name %></span>
+            <span><%= project.category.name %></span>
+            <%= image_tag project.image.to_s, class: 'img-fluid' %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      <% @projects.each do |project| %>
+        <% if project.category.name == "Fun" %>
+        <div class="projects-boxes d-grid hide" id="fun-container">
+          <div class="bg-yellow">
+            <span><%= project.name %></span>
+            <span><%= project.category.name %></span>
+            <%= image_tag project.image.to_s, class: 'img-fluid' %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="about-container f-height">
+  <section id="about">
+
+  </section>
+</div>
+
+<div class="contact-container f-height">
+  <section id="contact">
+
+  </section>
+</div>
