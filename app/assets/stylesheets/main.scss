@@ -1,5 +1,13 @@
 @import "bootstrap";
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, span, a {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .collapse.show {
   width: 100vw;
   background-color: white;
@@ -511,4 +519,49 @@ nav a {
 
 .remove-link-style {
   color: black;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link {
+  color: black;
+}
+
+.background-fill {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-items-center {
+    justify-items: center;
+}
+
+.justify-self-start {
+    justify-self: start;
+}
+
+.justify-self-center {
+    justify-self: center;
+}
+
+.justify-self-end {
+    justify-self: end;
+}
+
+.bg-yellow {
+  background: yellow;
+}
+
+.bg-black {
+ background-color: black;
+}
+
+.bg-fill {
+  background-size: cover;
 }

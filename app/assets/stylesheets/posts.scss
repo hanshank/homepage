@@ -73,8 +73,35 @@
 }
 
 .post-grid {
-  grid-template-columns: 5fr 3fr;
+  grid-template-columns: 1fr;
   gap: 2%;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .post-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .post-grid {
+    grid-template-columns: 5fr 3fr;
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .post-grid {
+    grid-template-columns: 5fr 3fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .post-grid {
+    grid-template-columns: 5fr 3fr;
+  }
 }
 
 .sidebar {

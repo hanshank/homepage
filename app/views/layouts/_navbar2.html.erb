@@ -1,4 +1,4 @@
-<div class="container-fluid absolute ">
+<div class="container-fluid absolute">
   <div class="container">
 
     <nav class="d-grid main-nav">
@@ -23,12 +23,11 @@
       </ul>
 
       <ul class="language">
-        <li><span>EN|NO</span></li>
+        <li><span><%= link_to 'EN', url_for( locale: 'en' ) %>|<%= link_to 'NO', url_for( locale: 'no' ) %></span</li>
       </ul>
       </div>
 
     </nav>
 
   </div>
-
 </div>

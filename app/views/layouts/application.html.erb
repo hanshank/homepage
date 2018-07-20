@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Raleway:300|Roboto" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
 
@@ -28,8 +29,15 @@
 
 
   <body>
-    <%= render 'layouts/navbar2' %>
-    
+
+    <% if current_page?('root') %>
+      <%= render 'layouts/transparent_navbar' %>
+    <% elsif current_page?(controller: 'pages') %>
+      <%= render 'layouts/transparent_navbar' %>
+    <% else %>
+      <%= render 'layouts/solid_navbar' %>
+    <% end %>
+
     <%= yield %>
 
     <%= render 'layouts/footer' %>

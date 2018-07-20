@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :categories
   resources :projects
-  scope "(:locale)" do
+  scope "/(:locale)" do
     root 'pages#homepage'
     get '/home' => 'pages#home'
     get '/homepage' => 'pages#homepage'

@@ -1,0 +1,77 @@
+To recreate versions for CarrierWave:
+Project.all.each { |project| project.image.recreate_versions! if project.image? }
+
+
+Squares
+
+- I need a container with 100vh
+
+- I need the column height to be the same as the the row height and the column width:
+
+I can figure out this by
+
+| ----------------- |
+| | 1 | | 2 | | 3 | |
+|                   |
+| | 4 | | 5 | | 6 | |
+| ----------------- |
+  
+Container: 100vh;
+
+row-width: 100vh;
+row-height: Depends how many rows;
+
+auto fill by how many columns
+
+if 6 columns total
+
+
+
+.square-container {
+  --columns: 1;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: var(--columns)fr;
+  // grid-template-columns: repeat( auto-fit, minmax(1fr, 1fr) );
+}
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 544px) {
+  .square-container {
+    --columns: 1;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+  .square-container {
+    --columns: 3;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .square-container {
+    --columns: 3;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .square-container {
+    --columns: 3;
+  }
+}
+
+.square {
+  position: relative;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.square::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
