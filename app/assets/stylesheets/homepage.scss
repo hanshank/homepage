@@ -19,20 +19,9 @@
   height: auto;
 }
 
-:root {
-  --main-color: blue;
-}
-
-.page-nav {
-  height: 100vh;
-  position: fixed;
-  display: none;
-  align-items: center;
-}
-
 .nav-dots {
-  --margin-top: 5px;
-  --height: 25px;
+  --margin-top: 10px;
+  --dot-height: 10px;
   position: relative;
   margin: 0;
   // top: calc(50% - var(--height) * 4 - var(--margin-top) * 1.5);
@@ -42,13 +31,21 @@
   position: relative;
 
   margin: var(--margin-top) 0;
-  width: 25px;
-  height: var(--height);
+  width: var(--dot-height);
+  height: var(--dot-height);
   margin: var(--margin-top) 0;
 
   list-style-type: none;
   border-radius: 50%;
-  border: 1px solid black;
+  background: tomato;
+  opacity: 0.7;
+
+  transform: opacity 1s ease-in-out;
+}
+
+.active-dot {
+  transform: scale(2);
+  opacity: 1;
 }
 
 // Extra small devices (portrait phones, less than 576px)
@@ -77,10 +74,7 @@
     --columns: 3;
   }
 
-  .page-nav {
-    // display: flex;
-    display: none;
-  }
+
 }
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -163,8 +157,10 @@
 
 
 .welcome-container {
- background-color: var(--main-color);
+ background-color: var(--primary-color);
 }
+
+
 
 .projects-container {
   grid-template-rows: 15% 15% 70%;
@@ -174,8 +170,6 @@
   grid-template-columns: repeat(4, 1fr);
   padding: 1% 20%;
 }
-
-
 
 .projects-container {
 }
@@ -192,37 +186,6 @@
 
 .d-grid {
   display: grid;
-}
-
-.main-nav {
-  padding-right: 5%;
-  padding-left: 5%;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-
-}
-
-nav {
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  padding: 2% 0;
-}
-
-.logo img {
-  width: 30%;
-
-}
-
-a .logo {
-  display: flex !important;
-  justify-content: flex-end !important;
 }
 
 .menu {

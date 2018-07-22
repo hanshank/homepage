@@ -1,4 +1,55 @@
 document.addEventListener("turbolinks:load", function() {
+
+  var scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+
+  document.addEventListener('scroll', function() {
+    const mb = document.getElementById("main-banner");
+    const mbHeight = mb.clientHeight;
+    const mbTopPos= mb.offsetTop;
+    const ab = document.getElementById("about");
+    const abHeight = ab.clientHeight;
+    const abTopPos = ab.offsetTop;
+    const pr = document.getElementById("projects");
+    const prHeight = pr.clientHeight;
+    const prTopPos = pr.offsetTop;
+    const co = document.getElementById("contact");
+    const coHeight = co.clientHeight;
+    const coTopPos = co.offsetTop;
+    const fromTop = window.pageYOffset;
+
+    if (fromTop < mbTopPos + mbHeight / 2 ) {
+      dot1.classList.add('active-dot');
+    }
+    else {
+      dot1.classList.remove('active-dot');
+    }
+
+    if (fromTop < abTopPos + abHeight / 2 && fromTop > mbTopPos + mbHeight / 2) {
+      dot2.classList.add('active-dot');
+    }
+    else {
+      dot2.classList.remove('active-dot');
+    }
+
+    if (fromTop < prTopPos + prHeight / 2 && fromTop > abTopPos + abHeight / 2 ) {
+      dot3.classList.add('active-dot');
+    }
+    else {
+      dot3.classList.remove('active-dot');
+    }
+
+    if (fromTop < coTopPos + coHeight / 2 && fromTop > prTopPos + prHeight / 2) {
+      dot4.classList.add('active-dot');
+    }
+    else {
+      dot4.classList.remove('active-dot');
+    }
+  });
+
+
+
+
+
   let dot1 = document.querySelector("#dot-1");
   let dot2 = document.querySelector("#dot-2");
   let dot3 = document.querySelector("#dot-3");
@@ -10,29 +61,44 @@ document.addEventListener("turbolinks:load", function() {
     dot1.classList.add('bg-black');
   })
 
-  document.querySelector("#websites-link").addEventListener("click", function() {
-    openTab('websites');
-  })
-  document.querySelector("#code-link").addEventListener("click", function() {
-    openTab('code');
-  })
-  document.querySelector("#school-link").addEventListener("click", function() {
-    openTab('school');
-  })
-  document.querySelector("#fun-link").addEventListener("click", function() {
-    openTab('fun');
-  })
+  if (document.querySelector("#websites-link")) {
+    document.querySelector("#websites-link").addEventListener("click", function() {
+      openTab('websites');
+    })
+  }
 
-  document.querySelector("#contact-btn").addEventListener("click", function() {
-    hide('contact-btn-container')
-    show('contact-form');
-    setTimeout(function() { fadeIn('contact-form') }, 50);
-  })
+  if (document.querySelector("#school-link")) {
+    document.querySelector("#school-link").addEventListener("click", function() {
+      openTab('school');
+    })
+  }
 
-  document.querySelector("#close-btn").addEventListener("click", function() {
-    hide('contact-form');
-    show('contact-btn-container');
-  })
+
+
+  if (document.querySelector("#fun-link")) {
+    document.querySelector("#fun-link").addEventListener("click", function() {
+      openTab('fun');
+    })
+  }
+
+
+
+  if (document.querySelector("#contact-btn")) {
+    document.querySelector("#contact-btn").addEventListener("click", function() {
+      hide('contact-btn-container')
+      show('contact-form');
+      setTimeout(function() { fadeIn('contact-form') }, 50);
+    })
+  }
+
+
+  if (document.querySelector("#close-btn")) {
+    document.querySelector("#close-btn").addEventListener("click", function() {
+      hide('contact-form');
+      show('contact-btn-container');
+    })
+  }
+
 
 
 function showhide(id) {
@@ -106,14 +172,19 @@ document.body.addEventListener('ajax:error', function(event) {
   }
 
   // Add active class to the current button (highlight it)
-  var linkContainer = document.getElementById("links-container");
-  var btns = linkContainer.getElementsByClassName("js-link");
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active-tab");
-      current[0].className = current[0].className.replace(" active-tab", "");
-      this.className += " active-tab";
-    });
+  var linkContainer;
+  if (document.getElementById("links-container")) {
+    linkContainer = document.getElementById("links-container");
   }
-
+  var btns;
+  if (linkContainer) {
+    btns = linkContainer.getElementsByClassName("js-link");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active-tab");
+        current[0].className = current[0].className.replace(" active-tab", "");
+        this.className += " active-tab";
+      });
+    }
+  }
 });
