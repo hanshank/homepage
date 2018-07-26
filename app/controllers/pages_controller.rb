@@ -16,12 +16,18 @@ class PagesController < ApplicationController
       # Deliver the signup email
       MessageMailer.send_message_notifier(@contact).deliver
       MessageMailer.send_message(@contact).deliver
-      flash[:notice] = "Vi har motatt meldingen din og vil normalt svare innen 1-2 dager"
-      redirect_to root_path
+      respond_to do |format|
+        format.js
+      end
     else
       flash[:notice] = "Meldingen kunne ikke sendes. Venligst prøv igjen."
       render :new
     end
+  end
+
+  def homepage
+    @projects = Project.all
+    @contact = Contact.new
   end
 
   def show

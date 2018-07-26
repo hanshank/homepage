@@ -7,35 +7,20 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag params[:controller] %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Raleway:300|Roboto" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   </head>
 
-<header style="position: relative;">
-  <% if notice %>
-    <div class="alert alert-success dismissible">
-      <a href="#" class="close" data-dismiss="alert" onclick="remove();" aria-label="close">&times;</a>
-      <p class=""><%= notice %></p>
-    </div>
-  <% end %>
-  <% if alert %>
-    <div class="flash">
-      <p class="alert alert-danger"><%= alert %></p>
-    </div>
-  <% end %>
-</header>
-
-
-
   <body>
 
-    <%= render 'layouts/transparent_navbar' %>
+    <div class="wrapper">
+      <%= render 'layouts/main_nav' %>
 
+      <%= yield %>
 
-    <%= yield %>
-
-    <%= render 'layouts/footer' %>
+      <%= render 'layouts/footer' %>
+    </div>
 
   </body>
 

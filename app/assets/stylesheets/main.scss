@@ -1,4 +1,231 @@
-@import "bootstrap";
+:root {
+  --primary-color: #607D8B;
+  --secondary-color: tomato;
+  --tertiary-color: white;
+  --nav-height: 8vh;
+  --grid-gap: 5px;
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.empty-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wrapper {
+  display: grid;
+  padding: 0 15px;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  grid-gap: var(--grid-gap);
+}
+
+.wrapper > * {
+  grid-column: col-start / span 12;
+}
+
+.nav-item {
+  color: black;
+  display: inline-block;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+}
+
+.main-nav {
+  grid-area: mn;
+  grid-row-start: 1;
+  grid-column: col-start 1 / span 12;
+  grid-row-start: 1;
+  height: var(--nav-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 150px;
+}
+
+.logo {
+  display: inline-block;
+  background: url('logo2.svg');
+  background-size: contain;
+  width: 50px;
+  height: var(--nav-height);
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.main-banner {
+  height: calc(100vh - var(--nav-height) - var(--grid-gap) * 2);
+  display: grid;
+  grid-gap: var(--grid-gap);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.item1 {
+  background-color: var(--primary-color);
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 6;
+  // width: 50%;
+  // height: 100%;
+}
+
+.item2 {
+  background-color: var(--secondary-color);
+  grid-column: 7 / span 6;
+  grid-row: 1 / span 6;
+  // width: 50%;
+  // height: 100%;
+}
+
+.main-title-left {
+  grid-column: 1 / span 6;
+  grid-row: 3 / span 1;
+  position: grid-column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.main-title-right {
+  grid-column: 7 / span 6;
+  grid-row: 4 / span 1;
+  position: grid-column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1;
+}
+
+.main-title {
+  font-size: 50px;
+  color: whitesmoke;
+}
+
+.about {
+  height: 100vh;
+  background-color: wheat;
+}
+
+.projects {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projects-content {
+  width: 100%;
+}
+
+.contact {
+  height: 100vh;
+}
+
+
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  grid-column: 1 / span 12;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, span, a {
+  font-family: 'open-sans', sans-serif;
+}
+
+.page-nav {
+  display: none;
+  height: 100vh;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .empty-sidebar {
+    grid-column: col-start 12 / 12;
+    grid-row-start: 1;
+  }
+
+  .sidebar {
+    grid-area: sd;
+    grid-column: 1 / 2;
+    grid-row-start: 1;
+
+  }
+
+  .main-nav {
+    grid-column: col-start 2 / span 10;
+    grid-row-start: 1;
+  }
+
+  .main-content {
+    grid-area: mc;
+    grid-column: col-start 2 / span 10;
+    grid-row-start: 2;
+    display: grid;
+    grid-gap: var(--grid-gap);
+  }
+
+  .page-nav {
+    display: flex;
+    width: calc(100% / 12 - var(--grid-gap));
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+
+
+
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+ }
 
 .collapse.show {
   width: 100vw;
@@ -21,9 +248,9 @@
   margin-bottom: 0;
 }
 
-header {
-  position: relative;
-}
+// header {
+//   position: relative;
+// }
 
 .overlay {
   box-shadow: inset 0 0 0 2000px rgba(255,0,150,0.3);
@@ -56,19 +283,6 @@ div.required label:after {
   background: #ffffffc2;
 }
 
-.nav-item {
-  color: black;
-}
-
-.navbar .navbar-light .navbar-nav .nav-link .custom-link {
-  font-size: 1.2rem;
-  color: black;
-}
-
-.navbar-brand {
-  font-size: 1.3rem;
-}
-
 .header-title {
   text-shadow: 1px 1px #7c7c7c;
   font-size: 2.6rem;
@@ -82,34 +296,8 @@ div.required label:after {
   position: relative;
 }
 
-nav {
-  background: none;
-
-}
-
-#custom-nav {
-  padding-top: 2%;
-  padding-bottom: 2%;
-  background-color: rgba(0,0,0,0);
-  border: 0;
-  box-shadow: none;
-  z-index: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition: background .5s ease-in-out, opacity .5s ease;
-  -moz-transition: background .5s ease-in-out, opacity .5s ease;
-  transition: background .5s ease-in-out, opacity .5s ease;
-}
-
 .hide {
   display: none !important;
-}
-
-.navbar{
-  background:transparent;
-  background-image:none;
-  border-color:transparent;
-  box-shadow:none;
 }
 
 body {
@@ -131,10 +319,6 @@ body {
 
 .test {
   background: #ed8000;
-}
-
-.navbar-brand {
-  color: #00a3c4;
 }
 
 .link {
@@ -178,20 +362,6 @@ body {
   color: black;
 }
 
-.main-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // background: image-url('mountains.jpg');
-  background:
-  linear-gradient(
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.1)
-  ),
-  image-url('mountains.jpeg');
-  background-size: auto no-repeat;
-}
-
 // .background {
 //   z-index: 1;
 //   background: white;
@@ -218,7 +388,9 @@ body {
 
 .social-icons {
   font-size: 2em;
+  margin-top: 1%;
 }
+
 
 .social-icons i {
   border: 1px solid black;
@@ -244,11 +416,6 @@ body {
   transform: skewY(3deg);
 }
 
-
-.main-banner img {
-  -webkit-clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
-  clip-path: polygon(0 0, 1600px 0, 1600px 87%, 0 100%);
-}
 
 .button {
   font-size: 16px;
@@ -278,10 +445,6 @@ button a {
 
 .button a {
   color: white;
-}
-
-.navbar a {
-  color: black;
 }
 
 .button:hover {
@@ -317,9 +480,6 @@ button a {
   align-items: center;
 }
 
-nav a {
-  color: black;
-}
 
 .section {
   min-height: 100vh;
@@ -384,12 +544,6 @@ nav a {
   color: black;
 }
 
-.about {
-  min-height: 66.666vh;
-  // padding: 10% 0;
-  background: linear-gradient(to right, white 0%, #f6f6f6 47%, #ededed 100%);
-}
-
 .img-box {
   border: 1px solid black;
   border-radius: 33.33%;
@@ -400,19 +554,6 @@ nav a {
   border: 2px solid black;
   height: 200px;
   max-width: 100%;
-}
-
-.contact {
-  min-height: 50vh;
-  padding: 10% 0;
-  background: rgba(255,255,255,1);
-  background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
-  background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
 }
 
 .macbook {
@@ -429,14 +570,7 @@ nav a {
   display: inline;
 }
 
-.navbar-trans {
-  background: transparent;
-  position: absolute;
-}
 
-.nav a {
-  color: black;
-}
 
 .project-box {
   padding: 1% 3%;
@@ -511,4 +645,49 @@ nav a {
 
 .remove-link-style {
   color: black;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link {
+  color: black;
+}
+
+.background-fill {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-items-center {
+    justify-items: center;
+}
+
+.justify-self-start {
+    justify-self: start;
+}
+
+.justify-self-center {
+    justify-self: center;
+}
+
+.justify-self-end {
+    justify-self: end;
+}
+
+.bg-yellow {
+  background: yellow;
+}
+
+.bg-black {
+ background-color: black;
+}
+
+.bg-fill {
+  background-size: cover;
 }

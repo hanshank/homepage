@@ -1,0 +1,33 @@
+<div class="container-fluid absolute">
+  <div class="container">
+
+    <nav class="d-grid main-nav">
+
+      <%= link_to root_path, class: 'logo', data: { no_turbolink: true } do  %>
+        <%= image_tag 'logo.svg' %>
+      <% end %>
+
+      <ul class="menu">
+        <li>
+          <%= link_to("#{t('nav.item_1')}", root_path(anchor: 'projects'), class: '') %>
+        </li>
+        <li>
+          <%= link_to("#{t('nav.item_2')}", root_path(anchor: 'services'), class: '') %>
+        </li>
+        <li>
+          <%= link_to("#{t('nav.item_3')}", root_path(:anchor => 'contact'), class: '') %>
+        </li>
+        <li>
+          <%= link_to "#{t('nav.item_4')}", posts_path, class: '' %>
+        </li>
+      </ul>
+
+      <ul class="language">
+        <li><span><%= link_to 'EN', url_for( locale: 'en' ) %>|<%= link_to 'NO', url_for( locale: 'no' ) %></span</li>
+      </ul>
+      </div>
+
+    </nav>
+
+  </div>
+</div>

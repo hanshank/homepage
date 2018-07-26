@@ -27,8 +27,13 @@
 
   <body>
 
-    <%= render 'layouts/transparent_navbar' %>
-
+    <% if current_page?('root') %>
+      <%= render 'layouts/transparent_navbar' %>
+    <% elsif current_page?(controller: 'pages') %>
+      <%= render 'layouts/transparent_navbar' %>
+    <% else %>
+      <%= render 'layouts/solid_navbar' %>
+    <% end %>
     <%= yield %>
 
     <%= render 'layouts/footer' %>

@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  scope "(:locale)" do
-    root 'pages#home'
+  resources :categories
+  resources :projects
+  scope "/(:locale)" do
+    root 'pages#homepage'
     get '/home' => 'pages#home'
+    get '/homepage' => 'pages#homepage'
     post '/contact' => 'contacts#create'
 
     resources :pages do
@@ -9,6 +12,7 @@ Rails.application.routes.draw do
     end
 
     resources :posts
+    resources :projects
 
   end
 

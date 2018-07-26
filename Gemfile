@@ -68,3 +68,5 @@ gem 'carrierwave', '~> 1.0'
 gem 'trix'
 
 gem 'jquery-rails'
+
+gem "mini_magick"

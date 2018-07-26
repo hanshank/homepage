@@ -1,0 +1,129 @@
+<aside class="sidebar">
+  <div class="page-nav">
+    <ul class="nav-dots">
+      <li class="dot" id="dot-1">
+        <a class="empty-link" href="#main-banner"></a>
+      </li>
+      <li class="dot" id="dot-2">
+        <a class="empty-link" href="#about"></a>
+      </li>
+      <li class="dot" id="dot-3">
+        <a class="empty-link" href="#projects"></a>
+      </li>
+      <li class="dot" id="dot-4">
+        <a class="empty-link" href="#contact"></a>
+      </li>
+    </ul>
+  </div>
+</aside>
+
+<div class="empty-sidebar">
+
+</div>
+
+<div class="main-content">
+  <section class="main-banner" id="main-banner">
+    <div class="item1">
+
+    </div>
+
+    <div class="main-title main-title-left">
+      <h1 class="">I'M A</h1>
+
+    </div>
+
+    <div class="main-title main-title-right">
+      <h1 class="">DEVELOPER</h1>
+    </div>
+    
+    <div class="item2">
+
+    </div>
+  </section>
+
+  <section class="about" id="about">
+
+  </section>
+
+  <section class="projects bg-primary min-height-100" id="projects">
+    <div class="d-grid projects-content">
+
+      <div class="projects-title d-grid justify-self-center align-self-center">
+        <h1>Monk projects</h1>
+      </div>
+
+      <div class="projects-nav d-grid" id="links-container">
+        <div class="nav-btn">
+            <span class="js-link cool-link active-tab" id="websites-link">Websites</span>
+        </div>
+        <div class="nav-btn">
+          <span class="js-link cool-link" id="code-link">Code</span>
+        </div>
+        <div class="nav-btn">
+          <span class="js-link cool-link" id="school-link">School</span>
+        </div>
+        <div class="nav-btn">
+          <span class="js-link cool-link" id="fun-link">Fun</span>
+        </div>
+      </div>
+
+        <div class="square-container tab" id="websites">
+          <% @projects.each do |project| %>
+            <% if project.category.name == "Websites" %>
+              <div class="square" style="background-image: url(<%= project.image_url(:thumb) %>);">
+                <div class="content">
+                  <div class="inner d-flex justify-content-center align-items-center text-center">
+                    <%= link_to 'See project', project_path(project), class: 'primary-button link' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="square-container tab hide" id="code">
+          <% @projects.each do |project| %>
+            <% if project.category.name == "Code" %>
+              <div class="square" style="background-image: url(<%= project.image_url(:thumb) %>);">
+                <div class="content">
+                  <div class="inner d-flex justify-content-center align-items-center text-center">
+                    <%= link_to 'Code', project_path(project), class: 'primary-button link' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="square-container tab hide" id="school">
+          <% @projects.each do |project| %>
+            <% if project.category.name == "School" %>
+              <div class="square wrap" style="background-image: url(<%= project.image_url(:thumb) %>);">
+                <div class="content">
+                  <div class="inner d-flex justify-content-center align-items-center text-center">
+                    <%= link_to 'Code', project_path(project), class: 'primary-button link' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="square-container tab hide" id="fun">
+          <% @projects.each do |project| %>
+            <% if project.category.name == "Fun" %>
+              <div class="square" style="background-image: url(<%= project.image_url(:thumb) %>);">
+                <div class="content">
+                  <div class="inner d-flex justify-content-center align-items-center text-center">
+                    <%= link_to 'Code', project_path(project), class: 'primary-button link' %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+
+  </section>
+</div>
