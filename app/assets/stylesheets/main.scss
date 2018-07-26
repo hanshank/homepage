@@ -61,7 +61,7 @@ body {
 
 .logo {
   display: inline-block;
-  background: url('logo2.svg');
+  background: image-url('logo2.svg');
   background-size: contain;
   width: 50px;
   height: var(--nav-height);
