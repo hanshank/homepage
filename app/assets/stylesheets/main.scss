@@ -1,9 +1,18 @@
+
+
 :root {
   --primary-color: #607D8B;
   --secondary-color: tomato;
   --tertiary-color: white;
   --nav-height: 8vh;
   --grid-gap: 5px;
+  --text-color: white;
+  --contact-font: 1em;
+  --place-holder-color: #f2f2f2c4;
+}
+
+button {
+  border: none;
 }
 
 .bg-primary {
@@ -37,6 +46,10 @@ body {
   display: inline-block;
 }
 
+.text-left {
+    text-align: left;
+}
+
 .nav-link {
   color: black;
   text-decoration: none;
@@ -59,6 +72,10 @@ body {
   width: 150px;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .logo {
   display: inline-block;
   background: image-url('logo2.svg');
@@ -68,6 +85,14 @@ body {
   position: relative;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.empty-sidebar {
+  display: none;
+}
+
+.sidebar {
+  display: none;
 }
 
 .main-banner {
@@ -139,7 +164,26 @@ body {
   height: 100vh;
 }
 
+.contact-title {
+  height: 10vh;
+}
 
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2px;
+}
+
+.contact-form ::placeholder {
+  color: var(--place-holder-color);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  font-size: var(--contact-font);
+  color: white;
+  padding: 2% 5%;
+}
 
 .footer {
   display: flex;
@@ -167,65 +211,6 @@ p, span, a {
   justify-content: center;
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-
-  .wrapper {
-    padding: 0;
-  }
-
-  .empty-sidebar {
-    grid-column: col-start 12 / 12;
-    grid-row-start: 1;
-  }
-
-  .sidebar {
-    grid-area: sd;
-    grid-column: 1 / 2;
-    grid-row-start: 1;
-
-  }
-
-  .main-nav {
-    grid-column: col-start 2 / span 10;
-    grid-row-start: 1;
-  }
-
-  .main-content {
-    grid-area: mc;
-    grid-column: col-start 2 / span 10;
-    grid-row-start: 2;
-    display: grid;
-    grid-gap: var(--grid-gap);
-  }
-
-  .page-nav {
-    display: flex;
-    width: calc(100% / 12 - var(--grid-gap));
-  }
-
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
-
-
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-
-
-
-
-
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-
- }
 
 .collapse.show {
   width: 100vw;
@@ -353,9 +338,40 @@ body {
     border: 1px solid #cccccc6e;
 }
 
+.contact-form {
+  width: 100%;
+}
 
-.new-form {
-  margin-top: 100px;
+.form-field {
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  padding: 2%;
+}
+
+.contact-form input, .contact-form textarea {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+
+
+.contact-form input[type="text"], .contact-form textarea {
+  font-size: var(--contact-font);
+  color: var(--text-color);
+}
+
+input[type="button"], input[type="submit"] {
+  border: none;
+}
+
+.contact-form textarea {
+  height: 20vh;
+}
+
+.contact-form input[type=text] {
+  height: 5vh;
 }
 
 .main-btn a {
@@ -581,14 +597,12 @@ button a {
   padding: 5% 7%;
 }
 
-.right-place {
-  display: flex;
-  justify-content: flex-end;
+.flex-dir-col {
+  flex-direction: column;
 }
 
-.flexi {
-  display: flex;
-  width: 100%;
+.j-content-end {
+  justify-content: flex-end;
 }
 
 .middle {
@@ -660,6 +674,12 @@ button a {
   background-size: cover;
 }
 
+.align-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .align-items-center {
   align-items: center;
 }
@@ -691,3 +711,69 @@ button a {
 .bg-fill {
   background-size: cover;
 }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .empty-sidebar {
+    display: block;
+    grid-column: col-start 12 / 12;
+    grid-row-start: 1;
+  }
+
+  .sidebar {
+    display: block;
+    grid-area: sd;
+    grid-column: 1 / 2;
+    grid-row-start: 1;
+
+  }
+
+  .main-nav {
+    grid-column: col-start 2 / span 10;
+    grid-row-start: 1;
+  }
+
+  .main-content {
+    grid-area: mc;
+    grid-column: col-start 2 / span 10;
+    grid-row-start: 2;
+    display: grid;
+    grid-gap: var(--grid-gap);
+  }
+
+  .page-nav {
+    display: flex;
+    width: calc(100% / 12 - var(--grid-gap));
+  }
+
+  .contact-form {
+    width: 40%;
+  }
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+
+
+
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+ }

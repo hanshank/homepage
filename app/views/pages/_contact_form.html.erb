@@ -1,34 +1,17 @@
-      <%= form_for @contact, :url => contact_pages_path, html: { remote: true, id: 'the-contact-form' } do |f| %>
-       <div class="modal-body">
-         <div class="form-row">
-           <div class="form-group col-md-6 required">
-             <label for="inputName"><%= t('contact_form.name') %></label>
-             <%= f.text_field :name, class: 'form-control', placeholder: "#{t('contact_form.label.name')}", required: true  %>
-           </div>
-           <div class="form-group col-md-6 required">
-             <label for="inputEmail"><%= t('contact_form.email') %></label>
-             <%= f.text_field :email, class: 'form-control', placeholder: "#{t('contact_form.label.email')}", required: true  %>
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-md-6">
-             <label for="inputEmail4"><%= t('contact_form.phone') %></label>
-             <%= f.text_field :phone_number, class: 'form-control', placeholder: "#{t('contact_form.label.phone')}"%>
-           </div>
-           <div class="form-group col-md-6">
-             <label for="inputPassword4"><%= t('contact_form.website') %></label>
-             <%= f.text_field :website, class: 'form-control', placeholder: "#{t('contact_form.label.website')}" %>
-           </div>
-         </div>
-         <div class="form-row">
-           <div class="form-group col-sm-12 required">
-              <label for="body"><%= t('contact_form.message') %></label>
-              <%= f.text_area :body, placeholder: "#{t('contact_form.label.message')}", class: 'form-control', required: true  %>
-           </div>
-         </div>
+      <%= form_for @contact, :url => contact_pages_path, html: { class: 'contact-form', id: 'contact-form' } do |f| %>
+      <div class="contact-title d-flex align-center-center">
+        <h1>GET IN TOUCH WITH ME</h1>
+      </div>
+       <div class="input-container">
+         <%= f.text_field :name, class: 'form-field', placeholder: "#{t('contact_form.label.name')}", required: true  %>
        </div>
-       <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" id="close-btn">Close</button>
+       <div class="input-container">
+         <%= f.text_field :email, class: 'form-field', placeholder: "#{t('contact_form.label.email')}", required: true  %>
+       </div>
+       <div class="input-container">
+         <%= f.text_area :body, placeholder: "#{t('contact_form.label.message')}", class: 'form-field', required: true  %>
+       </div>
+       <div class=" d-flex f-width-of-parent j-content-end">
          <%= f.submit 'Send', class: 'btn btn-primary' %>
        </div>
       <% end %>

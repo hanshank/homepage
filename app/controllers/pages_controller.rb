@@ -16,9 +16,7 @@ class PagesController < ApplicationController
       # Deliver the signup email
       MessageMailer.send_message_notifier(@contact).deliver
       MessageMailer.send_message(@contact).deliver
-      respond_to do |format|
-        format.js
-      end
+      redirect_to root_path, notice: t('contact.success')
     else
       flash[:notice] = "Meldingen kunne ikke sendes. Venligst prøv igjen."
       render :new

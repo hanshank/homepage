@@ -7,10 +7,6 @@
     <h1>Du har fått en ny melding fra <%= @contact.name %></h1>
     <p><%= simple_format(@contact.body) %></p>
     <br>
-    <p><%= @contact.phone_number %></p>
     <p><%= @contact.email %></p>
-    <% if !@contact.website.empty? %>
-      <%= @contact.website %>
-    <% end %>
   </body>
 </html>

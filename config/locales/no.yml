@@ -42,6 +42,7 @@
     title: 'Kontakt'
     text: 'Jeg hadde elsket å hørt fra deg om dine web utviklings behov! Send meg en melding, så vil jeg svare deg så raskt jeg kan.'
     btn: 'Send melding'
+    success: 'Takk for meldingen din! Du hører fra meg.'
 
   contact_form:
     title: 'Send en melding'
